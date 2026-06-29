@@ -16,7 +16,7 @@
 ## 文件结构
 ├── README.md
 ├── .gitignore
-└── code/dm_dirty_data.sas # 数据生成 + 逻辑核查主程序
+├── dm_dirty_data.sas # 数据生成 + 逻辑核查主程序
 
 
 ---
