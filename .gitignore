@@ -1,0 +1,19 @@
+# SAS 临时文件与生成文件
+*.sas7bdat
+*.sas7bvew
+*.sas7bcat
+*.sas7bndx
+*.mdd
+*.log
+*.lst
+*.sas7bdat.gz
+
+# SAS 工作目录可能产生的文件
+work/
+.sas/
+profile*.sas
+
+# 操作系统自动生成的文件
+.DS_Store
+Thumbs.db
+desktop.ini
