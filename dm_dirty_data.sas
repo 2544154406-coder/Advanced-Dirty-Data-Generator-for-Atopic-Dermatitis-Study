@@ -3,7 +3,6 @@
  * Scenario: Atopic Dermatitis Study
  * Focus: Logical inconsistencies, Protocol Deviations, Cross-domain conflicts
  * Sample Size: 300 Subjects
- * Fix: Replace RAND('integer',...) with FLOOR-based uniform integer generation
  ***********************************************************************/
 
 options nodate nonumber ls=120 ps=60;
