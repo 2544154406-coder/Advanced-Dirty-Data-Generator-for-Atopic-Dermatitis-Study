@@ -1,2 +1,66 @@
-# Advanced-Dirty-Data-Generator-for-Atopic-Dermatitis-Study
-Generate EDC‑proof logical inconsistencies and run automated validation checks – a simulation project for clinical statistical programming.
+# Dirty Data Generator – Atopic Dermatitis Study
+
+**SAS 项目 · 模拟临床试验中的逻辑脏数据及自动核查**
+
+---
+
+## 简介
+
+本项目生成 300 例特应性皮炎临床试验的模拟 DM 数据，故意嵌入 5 类 EDC 无法拦截的逻辑错误（如性别‑病史冲突、分层不一致等），并运行自动核查脚本检出这些问题。
+
+- **目的**：展示临床统计编程中的数据质量管理与逻辑核查能力  
+- **数据**：全部为随机生成，无任何真实患者信息  
+
+---
+
+## 文件结构
+├── README.md
+├── .gitignore
+└── code/dm_dirty_data.sas # 数据生成 + 逻辑核查主程序
+
+
+---
+
+## 运行环境
+
+- SAS 9.4 或更高版本（Base 模块即可）  
+- 无外部依赖，可直接提交运行  
+
+---
+
+## 快速开始
+
+1. 在 SAS 中打开 `code/dm_dirty_data.sas`  
+2. 直接提交执行  
+3. 输出两个数据集：  
+   - `dm_advanced_dirty` – 300 例模拟受试者数据  
+   - `logic_checks`   – 自动检出的逻辑问题清单  
+
+日志中也会打印部分示例行供快速查看。
+
+---
+
+## 脏数据与逻辑检查
+
+| 检查项 | 说明 | 严重性 |
+|--------|------|--------|
+| 年龄‑生日不一致 | 出生年推算年龄与录入 AGE 相差 > 1 岁 | 高 |
+| 性别‑病史冲突 | 女性受试者出现前列腺病史 | 高 |
+| 分层因子不一致 | 随机化 IGA 与实际基线 IGA 不符 | 中 |
+| 同日知情同意与给药 | 需核查具体时间戳 | 中 |
+| 未编码退出原因 | 自由文本理由未归类（需人工编码） | 低 |
+
+---
+
+## 声明
+
+- 本项目仅用于**技能展示与代码示范**，不涉及真实研究  
+- 所有数据均由 SAS 伪随机数生成，任何与真实个体的雷同均为巧合  
+- 欢迎自由使用、修改（MIT License）
+
+---
+
+## 作者
+
+[Feng Zhang]  
+如有疑问或建议，欢迎提交 Issue。
